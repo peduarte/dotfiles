@@ -67,7 +67,7 @@ function _prompt_segment
 	end
 
 	echo ""
-	echo -n "▷"
+	echo -n "▷ "
 	echo -n " "
 end
 
