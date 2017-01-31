@@ -18,7 +18,7 @@ end
 function _root_segment
 	set -l uid (id -u $USER)
 	if test $uid -eq 0
-		_segment red "⚡︎"
+		_segment red "◇"
 	end
 end
 
@@ -61,13 +61,13 @@ end
 
 function _prompt_segment
 	if test $last_status = 0
-		set_color cyan
+		set_color green
 	else
 		set_color red
 	end
 
 	echo ""
-	echo -n "❯ "
+	echo -n "▷ "
 end
 
 function fish_prompt
