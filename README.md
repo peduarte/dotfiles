@@ -9,6 +9,4 @@ cd dotfiles
 
 Other things:
 
-- Install OperatorMono font
-- Setup OperatorMono font in iTerm
 - Setup dracula theme in iTerm
