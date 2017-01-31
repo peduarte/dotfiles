@@ -2,18 +2,10 @@
 # ALIASES
 ############################################
 
-# navigation
-alias .. "cd .."
-alias ... "cd ../.."
-alias .... "cd ../../.."
-alias ..... "cd ../../../.."
-alias - "cd -"
-
 # shortcuts
 alias dt "cd ~/Desktop"
 alias dl "cd ~/Downloads"
-alias p "cd ~/Projects"
-alias f "cd ~/Projects/fathom"
+alias s "cd ~/Sites"
 
 # listings
 alias l "ls -laF"

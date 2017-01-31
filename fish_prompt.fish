@@ -3,7 +3,7 @@ set -g fish_prompt_pwd_dir_length 0
 
 function _segment
 	set_color $argv[1]
-	echo -n -s "[" $argv[2..-1] "]"
+	echo -n -s $argv[2..-1] " "
 	set_color normal
 end
 
@@ -26,6 +26,19 @@ function _path_segment
 	_segment cyan (prompt_pwd)
 end
 
+function _git_upstream_configured
+	git rev-parse --abbrev-ref @"{upstream}" > /dev/null 2>&1
+end
+
+function _git_behind_upstream
+	test (git rev-list --right-only --count HEAD...@"{u}" ^ /dev/null) -gt 0
+end
+
+function _git_ahead_of_upstream
+	# test (git rev-list --left-only --count HEAD...@"{u}" ^ /dev/null) -gt 0
+	test (command git log ^/dev/null | grep '^commit' | wc -l | tr -d " ") -gt 0
+end
+
 function _git_segment
 	if test (_git_branch_name)
 		set -l git_branch (_git_branch_name)
@@ -35,6 +48,26 @@ function _git_segment
 			_segment yellow "±"
 		end
 	end
+
+	if _git_upstream_configured
+		set -l git_status (command git rev-list --left-right --count 'HEAD...@{upstream}' | sed "s/[[:blank:]]/ /" ^/dev/null)
+
+		# Resolve Git arrows by treating `git_status` as an array
+		set -l git_arrow_left (command echo $git_status | cut -c 1 ^/dev/null)
+		set -l git_arrow_right (command echo $git_status | cut -c 3 ^/dev/null)
+		set -l git_arrows ""
+
+		# If arrow is not "0", it means it's dirty
+		if test $git_arrow_left -ne "0"
+			set git_arrows "↑";
+		end
+
+		if test $git_arrow_right -ne "0"
+			set git_arrows $git_arrows"↓"
+		end
+
+		_segment yellow $git_arrows
+	end
 end
 
 function _prompt_segment
@@ -42,11 +75,11 @@ function _prompt_segment
 		set_color green
 	else
 		set_color red
-		echo -n "[$last_status]"
+		echo -n $last_status
 	end
 
 	echo ""
-	echo -n "› "
+	echo -n "❯ "
 end
 
 function fish_prompt

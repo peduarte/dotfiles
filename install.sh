@@ -43,7 +43,7 @@ chsh -s /usr/local/bin/fish
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 # install z
-fisher z
+# fisher z
 
 # install dracula iterm theme
 mkdir -p ~/.config/iterm
