@@ -4,3 +4,6 @@
 [user]
 	name = Pedro Duarte
 	email = contact@peduarte.com
+
+[pull]
+	rebase = true
