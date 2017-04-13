@@ -7,3 +7,10 @@
 
 [pull]
 	rebase = true
+
+[alias]
+	st = status
+	co = checkout
+	url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
+	hub =! bash -c 'git url | xargs open'
+	pr =! bash -c 'git url | sed -E "s/\\(.+\\)/\\\\1\\\\/compare\\\\/`git rev-parse --abbrev-ref HEAD`?expand=1/" | xargs open'
