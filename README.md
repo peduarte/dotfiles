@@ -2,7 +2,7 @@
 All things setup.
 
 ```bash
-git clone https://github.com/artisologic/dotfiles.git
+git clone https://github.com/peduarte/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
