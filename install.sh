@@ -37,6 +37,8 @@ brew cask install github
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install visual-studio-code
+brew cask install alfred
+brew cask install spotify
 
 # install drivers
 brew cask install logitech-options
@@ -71,6 +73,9 @@ fisher add jorgebucaran/fish-nvm
 mkdir -p ~/.config/iterm
 curl https://raw.githubusercontent.com/dracula/iterm/master/Dracula.itermcolors > ~/.config/iterm/Dracula.itermcolors
 open ~/.config/iterm/Dracula.itermcolors
+
+# install dracula fish color mapping
+curl https://raw.githubusercontent.com/dracula/fish/master/dracula.fish > ~/.config/fish/conf.d/dracula.fish
 
 # finally symlink everything
 ln -fs "$(pwd)/.editorconfig" ~/.editorconfig
