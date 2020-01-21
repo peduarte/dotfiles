@@ -25,14 +25,21 @@ brew install yarn
 # enable alternate versions using cask
 brew tap homebrew/cask-versions
 
+# enable installing drivers using cask
+brew tap homebrew/cask-drivers
+
 # install apps
 brew cask install brave-browser
+brew cask install browserosaurus
 brew cask install firefox
 brew cask install gfxcardstatus
 brew cask install github
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install visual-studio-code
+
+# install drivers
+brew cask install logitech-options
 
 # install quicklook plugins
 brew cask install qlcolorcode # syntax highlighting
