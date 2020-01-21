@@ -16,11 +16,36 @@ brew upgrade
 # install basics stuff
 brew install fish
 brew install git
-brew install node
-brew install ruby
 
 # install other useful things
 brew install tree
+brew install watchman # to fix jest watch mode
+brew install yarn
+
+# enable alternate versions using cask
+brew tap homebrew/cask-versions
+
+# install apps
+brew cask install 1password6
+brew cask install appzapper
+brew cask install brave-browser
+brew cask install caffeine
+brew cask install firefox
+brew cask install gfxcardstatus
+brew cask install github
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install slack
+brew cask install spectacle
+brew cask install the-unarchiver
+brew cask install visual-studio-code
+
+# install quicklook plugins
+brew cask install qlcolorcode # syntax highlighting
+brew cask install qlstephen # extension-less text files
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install quicklook-csv
 
 # remove outdated versions from the cellar
 brew cleanup
@@ -43,7 +68,10 @@ chsh -s /usr/local/bin/fish
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 # install z
-# fisher z
+fisher add jethrokuan/z
+
+# install fish-nvm
+fisher add jorgebucaran/fish-nvm
 
 # install dracula iterm theme
 mkdir -p ~/.config/iterm
@@ -58,3 +86,4 @@ ln -fs "$(pwd)/.hushlogin" ~/.hushlogin
 ln -fs "$(pwd)/config.fish" ~/.config/fish/config.fish
 ln -fs "$(pwd)/fish_prompt.fish" ~/.config/fish/functions/fish_prompt.fish
 ln -fs "$(pwd)/fish_title.fish" ~/.config/fish/functions/fish_title.fish
+ln -fs "$(pwd)/fish_greeting.fish" ~/.config/fish/functions/fish_greeting.fish
