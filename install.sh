@@ -27,7 +27,6 @@ brew tap homebrew/cask-versions
 
 # install apps
 brew cask install brave-browser
-brew cask install caffeine
 brew cask install firefox
 brew cask install gfxcardstatus
 brew cask install github
