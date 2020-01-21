@@ -32,7 +32,6 @@ brew cask install gfxcardstatus
 brew cask install github
 brew cask install google-chrome
 brew cask install iterm2
-brew cask install the-unarchiver
 brew cask install visual-studio-code
 
 # install quicklook plugins
