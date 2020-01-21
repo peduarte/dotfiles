@@ -26,7 +26,6 @@ brew install yarn
 brew tap homebrew/cask-versions
 
 # install apps
-brew cask install appzapper
 brew cask install brave-browser
 brew cask install caffeine
 brew cask install firefox
