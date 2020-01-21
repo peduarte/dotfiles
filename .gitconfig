@@ -11,3 +11,8 @@
 	url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
 	hub =! bash -c 'git url | xargs open'
 	pr =! bash -c 'git url | sed -E "s/\\(.+\\)/\\\\1\\\\/compare\\\\/`git rev-parse --abbrev-ref HEAD`?expand=1/" | xargs open'
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
