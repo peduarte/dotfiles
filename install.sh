@@ -5,7 +5,9 @@
 ############################################
 
 # install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! which brew > /dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 # make sure we’re using the latest homebrew
 brew update
@@ -16,6 +18,9 @@ brew upgrade
 # install basics stuff
 brew install fish
 brew install git
+brew install gh
+brew install watchman
+
 
 # install other useful things
 brew install tree
@@ -29,20 +34,27 @@ brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
 
 # install apps
-brew cask install brave-browser
-brew cask install browserosaurus
-brew cask install firefox
-brew cask install gfxcardstatus
-brew cask install github
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install visual-studio-code
-brew cask install alfred
-brew cask install spotify
-brew cask install caffeine
+brew install --cask 1password
+brew install --cask brave-browser
+brew install --cask github
+brew install --cask iterm2
+brew install --cask visual-studio-code
+brew install --cask alfred
+brew install --cask spotify
+brew install --cask finicky
+brew install --cask slack
+brew install --cask discord
+brew install --cask cleanshot
+brew install --cask rectangle
+brew install --cask zoom
 
 # install drivers
-brew cask install logitech-options
+brew install --cask logitech-options
+
+# install fonts
+brew tap homebrew/cask-fonts
+brew cask install font-iosevka
+brew cask install font-inter
 
 # remove outdated versions from the cellar
 brew cleanup
