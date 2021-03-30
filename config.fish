@@ -26,6 +26,11 @@ alias hide "defaults write com.apple.finder AppleShowAllFiles -bool false and ki
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true and killall Finder"
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false and killall Finder"
 
+# list all "node_modules" folders in current directory
+alias lsnm="find . -name 'node_modules' -type d -prune -print | xargs du -chs"
+
+# delete all "node_modules" folders in current directory
+alias rmnm="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
 
 ############################################
 # FUNCTIONS
@@ -33,5 +38,6 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false and
 
 # create a new directory and cd into it
 function mkd
-	mkdir -p $argv; and cd $argv
+    mkdir -p $argv
+    and cd $argv
 end
