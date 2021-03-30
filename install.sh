@@ -78,10 +78,10 @@ chsh -s /usr/local/bin/fish
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 # install z
-fisher add jethrokuan/z
+fisher install jethrokuan/z
 
 # install fish-nvm
-fisher add jorgebucaran/fish-nvm
+fisher install jorgebucaran/fish-nvm
 
 # install dracula iterm theme
 mkdir -p ~/.config/iterm
