@@ -44,6 +44,7 @@ brew install --cask spotify
 brew install --cask finicky
 brew install --cask slack
 brew install --cask discord
+brew install --cask figma
 brew install --cask cleanshot
 brew install --cask rectangle
 brew install --cask zoom
